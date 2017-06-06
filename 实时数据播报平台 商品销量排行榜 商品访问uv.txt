@@ -1,0 +1,124 @@
+1.web端访问依赖数据
+    a./plog/you/site/tomcat/*web_access_log[.]*.lzo
+    使用解析器：com.netease.mail.statistics.dao.logparser.you.ULinkLogParser
+    满足条件：http_code=200  并且  User-Agent中不包含 yanxuan/\d{1,}[.]\d{1,}[.]\d{1,}字段
+    除去访问链接开头为：/favicon.ico 或 /xhr/
+    
+    b./plog/you/backend/app/.*stat[.]web[.].*
+    使用解析器：com.netease.mail.statistics.dao.logparser.you.YouAppLogParser
+    满足条件：cmd:visit
+    
+2.wap端访问依赖数据
+    a./plog/you/site/tomcat/*wap_access_log[.]*.lzo
+    使用解析器：com.netease.mail.statistics.dao.logparser.you.ULinkLogParser
+    满足条件：http_code=200  并且  User-Agent中不包含 yanxuan/\d{1,}[.]\d{1,}[.]\d{1,}字段
+    除去访问链接开头为：/favicon.ico 或 /xhr/
+    
+    b./plog/you/backend/app/.*stat[.]wap[.].*
+    使用解析器：com.netease.mail.statistics.dao.logparser.you.YouAppLogParser
+    满足条件：cmd:visit
+
+3.客户端访问依赖
+    /plog/you/wzp/main/
+
+
+分端 + 汇总
+web+wap
+web|wap日志
+http://you.163.com/item/detail?id=1011004&_stat_manufacturer=MUJI%E5%88%B6%E9%80%A0%E5%95%86
+
+
+ios+android
+依赖数据：/plog/you/site/tomcat/*app_access_log[.]*.lzo
+具体请求链接：/xhr/item/detail.json?itemId=xxx
+
+device-id/xxxxxxxxx 
+
+
+
+
+ 
+tomcat
+	10.170.155.57 - - [25/May/2017:00:01:30 +0800] "GET /item/detail?id=1064002&_stat_area=mod_8_item_3&_stat_id=1005000&_stat_referer=itemList HTTP/1.1" 200 87215 53 "175.10.93.12" "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.0 Mobile/14F89 Safari/602.1" "http://you.163.com/item/list?categoryId=1005000&subCategoryId=1008008" "810a5e15-e143-481f-9827-76e151db65eb" "-" "-"
+	url.path=/item/detail  url.parameter.id=1064002  uuid=810a5e15-e143-481f-9827-76e151db65eb
+	
+backend
+	{hostIp=10.160.246.127,fileName=web_access_log.2017-05-03.15}2017-05-25 00:29:39.252 [INFO] [BiLogWebServiceImpl] [cmd:visit,anonId:f67d398c-c708-4006-bb8b-75e0919710b8,source:web_gg_mail_mailin_0,userId:0,userName:null,url:/item/detail?id=1141004&from=web_gg_mail_mailin_0,ip:39.168.242.159]
+	url=/item/detail?id=1141004&from=web_gg_mail_mailin_0		anonId
+	
+ios+android
+	/plog/you/site/tomcat/2017/05/25/*app_access_log*.lzo	
+	使用解析器：com.netease.mail.statistics.dao.logparser.you.ULinkLogParser
+	
+	10.160.246.119 - - [25/May/2017:00:00:14 +0800] "GET /xhr/item/detail.json?itemId=1141013 HTTP/1.1" 200 6097 143 "223.104.5.226, 10.160.246.107" "NeteaseYanxuan/4 (iPhone; iOS 10.3.1; Scale/2.00)" "-" "f610bacc-8f68-493e-aafb-472fe2ece100" "-" "-" "YANXUAN/2.9.1 (750/1334/2x; IOS10.3.1; iPhone/iPhone 6) idfa/9BE9A76E-4E1B-46DB-A3ED-78B4B8DA8DB8 device-id/b9cc660f1b0efa170d8d89ee0d992b71"
+	url=/xhr/item/detail.json?itemId=1141013  
+	url.parameter.itemId=1141013
+	date=2017-05-25 00:00:14
+	uuid=f610bacc-8f68-493e-aafb-472fe2ece100
+	
+
+	
+	
+	
+	.................................
+	
+rp=750/1334/2x
+os=mac os x (iphone)
+url.parameter.itemId=1141013
+model=iphone/iphone 6
+hostIp=10.160.246.127
+serverip=10.160.246.119
+ua_ip=223.104.5.226 NeteaseYanxuan/4 (iPhone; iOS 10.3.1; Scale/2.00)
+device_id=b9cc660f1b0efa170d8d89ee0d992b71
+User-Agent=NeteaseYanxuan/4 (iPhone; iOS 10.3.1; Scale/2.00)
+date=2017-05-25 00:00:14
+url=/xhr/item/detail.json?itemId=1141013
+ip=223.104.5.226
+size=6097
+http_method=GET
+url.path=/xhr/item/detail.json
+system=IOS10.3.1
+time=25/May/2017:00:00:14 +0800
+ip.0=223.104.5.226
+http_code=200
+browser=Unknown
+fileName=web_access_log.2017-05-03.15
+uuid=f610bacc-8f68-493e-aafb-472fe2ece100
+url_refer=-
+refer.path=-
+
+
+
+
+
+
+
+
+uid=quizzychris
+url.parameter.itemId=1156134
+rp=1080/1920
+model=xiaomi/mi 5s plus
+hostIp=10.160.246.127
+serverip=10.160.246.119
+ua_ip=14.145.252.63 NeteaseYanxuan/2.9.1 (MI 5s Plus; android 6.0.1; Scale/2.75) device-id/4bd9fa5c49e2f320ddb45abbc5433a
+date=2017-05-25 00:00:14
+url.path=/xhr/item/detail.json
+time=25/May/2017:00:00:14 +0800
+ip.0=14.145.252.63
+http_code=200
+browser=Unknown
+url_refer=-
+os=android 6.x tablet
+device_id=4bd9fa5c49e2f320ddb45abbc5433a
+User-Agent=NeteaseYanxuan/2.9.1 (MI 5s Plus; android 6.0.1; Scale/2.75) device-id/4bd9fa5c49e2f320ddb45abbc5433a
+url=/xhr/item/detail.json?itemId=1156134
+size=12483
+ip=14.145.252.63
+http_method=GET
+system=android 6.0.1
+fileName=app_access_log.2017-05-03.15
+uuid=fede9920-cf69-45ff-be92-2ff198a395a3
+refer.path=-	
+
+
+

@@ -1,0 +1,203 @@
+# 主站实时播报
+	* 概况树桩图
+		- 日累计支付金额		/xhr/common/query.do	
+		ORDER-PAYED-SALEAMOUNT_ALL_ACCU ORDER-PAYED-SALEAMOUNT_WEB_ACCU
+		
+		
+		
+		
+		
+		
+		- 日累计支付用户数    	/xhr/common/query.do	ORDER-PAYED-UID_ALL_ACCU
+		- 日累计访问UV数		/xhr/common/query.do	ACCESS_YX-ACCESS-UUID_ALL
+		- 日累计新消用户数		/xhr/common/query.do	ORDER-PAYED-NEWCONSUMER_ALL_ACCU
+		- 日累计新消流水		/xhr/common/query.do	ORDER-PAYED-NEWCONSUMPTION_ALL_ACCU
+				
+	* 核心数据趋势
+		- 支付金额		/xhr/common/query.do	ORDER-PAYED-NEWCONSUMPTION_ALL（分段 小时）
+		1496635200000		2017/6/5 12:00:00
+		1496638800000		2017/6/5 13:00:00
+
+		{
+				"conditions": [
+					{
+						"countItem": "ORDER-PAYED-SALEAMOUNT_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1496635200000,
+						"endDate": 1496638800000,
+						"dateSpan": "HOUR"
+					}
+				]
+		}	
+
+		- 支付用户数	/xhr/common/query.do	ORDER-PAYED-UID_ALL_ACCU（累计） ORDER-PAYED-UID_ALL（分段 小时）
+		ORDER-PAYED-UID_ALL
+		1496635200000		2017/6/5 12:00:00
+		1496638800000		2017/6/5 13:00:00
+
+		{
+				"conditions": [
+					{
+						"countItem": "ORDER-PAYED-UID_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1496635200000,
+						"endDate": 1496638800000,
+						"dateSpan": "HOUR"
+					}
+				]
+		}	
+		
+		- 访问uv		/xhr/common/query.do	ACCESS_YX-ACCESS-UUID_ALL(累计)	ACCESS_YX-ACCESS-UUID_ALL（分段 小时）
+		ACCESS_YX-ACCESS-UUID_IOS_ANDROID + ACCESS_YX-ACCESS-UUID_WEB_WAP
+		1496160000000
+		1496160000000
+
+		{
+				"conditions": [
+					{
+						"countItem": "ACCESS_YX-ACCESS-UUID_IOS_ANDROID",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1496160000000,
+						"endDate": 1496160000000,
+						"dateSpan": "HOUR"
+					}
+				]
+		}	
+		
+		
+		
+		
+		
+	* 新消数据趋势
+		- 新消用户数	/xhr/common/query.do	ORDER-PAYED-NEWCONSUMER_ALL_ACCU（累计） ORDER-PAYED-NEWCONSUMER_ALL（分段 小时）
+		- 新消金额		/xhr/common/query.do	ORDER-PAYED-NEWCONSUMPTION_ALL_ACCU（累计） ORDER-PAYED-NEWCONSUMPTION_ALL（分段 小时）
+		
+		
+# 商品销量热度		
+	* 排行榜
+		- 销量		 	/xhr/common/rank.do		ITEM-PAYED-SALENUM_TOTAL_ALL_RANK
+		{
+			"conditions": [
+				{
+					"countItem": "ITEM-PAYED-SALENUM_TOTAL_ALL_RANK",
+					"dimens": null,
+					"dimenIds": null,
+					"startDate": 1495468800000,
+					"endDate": 1495530000000,
+					"size": 10,
+					"orderBy": "asc",
+					"dateSpan": "HOUR",
+					"parameters": null
+				}
+			]
+		}		
+		- 排除免单销量	/xhr/common/rank.do		ITEM-PAYED-SALENUM_ALL_RANK
+		- 销售额		/xhr/common/rank.do		ITEM-PAYED-SALEAMOUNT_ALL_RANK
+		
+		- 访问uv
+		 ACCESS_YX-ID_ITEM-UUID_WEB_WAP_ACCU ACCESS_YX-ID_ITEM_UUID_IOS_ANDROID_ACCU
+		
+		{
+			"conditions": [
+				{
+					"countItem": "ACCESS_YX-ID_ITEM-UUID_WEB_WAP_ACCU",
+					"dimens": null,
+					"dimenIds": null,
+				    "parameters": {
+						"id": 1116033
+					},
+					"startDate": 1496160000000,
+					"endDate": 1496242800000,
+					"dateSpan": "HOUR"
+				},
+				{
+					"countItem": "ACCESS_YX-ID_ITEM_UUID_IOS_ANDROID_ACCU",
+					"dimens": null,
+					"dimenIds": null,
+				    "parameters": {
+						"id": 1116033
+					},
+					"startDate": 1496160000000,
+					"endDate": 1496242800000,
+					"dateSpan": "HOUR"
+				}
+			]
+		}	
+		
+		
+
+# 运营坑位点击
+	* 首页整体点击率
+		- 首页访问uv
+
+		
+				累计
+				{
+					"conditions": [
+						{
+							"countItem": "ORDER-PAYED-UID_ALL_ACCU",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": {"id":300073},
+							"startDate": 1495468800000,
+							"endDate": 1495544400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}
+				
+				{
+					"conditions": [
+						{
+							"countItem": "ACCESS_YX-ACCESS_INDEX-UUID_WEB_WAP_ACCU",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495530000000,
+							"endDate": 1495544400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}	
+				
+				小时
+				{
+					"conditions": [
+						{
+							"countItem": "ACCESS_YX-ACCESS_INDEX-UUID_WEB_WAP",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495530000000,
+							"endDate": 1495544400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}
+
+				{
+					"conditions": [
+						{
+							"countItem": "ACCESS_YX-ACCESS_INDEX-UUID_WEB",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495544400000,
+							"endDate": 1495544400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}				
+				
+		
+		
+		
+		
+		
+		

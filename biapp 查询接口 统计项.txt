@@ -1,0 +1,599 @@
+# BiApp 2017-05-22
+
+- KPI指标
+	*关键指标详情
+		- 访问uv
+		ACCESS_YX-ACCESS-UUID_IOS_ANDROID_ACCU
+		ACCESS_YX-ACCESS-UUID_WEB_WAP_ACCU
+		
+		{
+				"conditions": [
+					{
+						"countItem": "ACCESS_YX-ACCESS-UUID_IOS_ANDROID_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1496160000000,
+						"endDate": 1496242800000,
+						"dateSpan": "HOUR"
+					},
+					{
+						"countItem": "ACCESS_YX-ACCESS-UUID_WEB_WAP_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1496160000000,
+						"endDate": 1496242800000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+			
+			
+		
+
+- 类目	
+	*
+		-总日销售额
+			ORDER-PAYED-SALEAMOUNT_ALL_ACCU 
+		-总日销量
+			SKU-PAYED-SALENUM_TOTAL_ALL_ACCU
+	
+	* 在线商品
+		-在线spu数
+		{
+				"conditions": [
+					{
+						"countItem": "DB_YX-ITEM_ONLINE_COUNT",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+		
+
+	* 新老构成
+		-新品spu数
+			DB_YX-ITEM_NEW_PRODUCT_COUNT
+				{
+				"conditions": [
+					{
+						"countItem": "DB_YX-ITEM_NEW_PRODUCT_COUNT",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+			
+		-老品spu数
+			DB_YX-ITEM_OLD_PRODUCT_COUNT
+			
+			{
+				"conditions": [
+					{
+						"countItem": "DB_YX-ITEM_OLD_PRODUCT_COUNT",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": null,
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+			
+		
+		-新品销量
+		-新品销售额
+		-老品销量
+		-老品销售额
+			一级类目id	
+			1076407	
+			11010181
+
+			#商品销量 新品 
+			ITEM-PAYED-NEW_PRODUCT_SALENUM_TOTAL_ALL
+			#商品销量 老品
+			ITEM-PAYED-OLD_PRODUCT_SALENUM_TOTAL_ALL
+			#商品销售额 新品 
+			ITEM-PAYED-NEW_PRODUCT_SALEAMOUNT_ALL
+			#商品销售额 老品 
+			ITEM-PAYED-OLD_PRODUCT_SALEAMOUNT_ALL
+				
+			新品销量	
+			{
+				"conditions": [
+					{
+						"countItem": "ITEM-PAYED-NEW_PRODUCT_SALENUM_TOTAL_ALL",
+						"dimens":null,
+						"dimenIds": null,
+						"startDate": 1495728000000,
+						"endDate": 1495735200000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}		
+				
+			新品销售额	
+			{
+				"conditions": [
+					{
+						"countItem": "ITEM-PAYED-NEW_PRODUCT_SALEAMOUNTT_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"startDate": 1495468800000,
+						"endDate": 1495519200000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+
+
+				
+			老品销量	
+			{
+				"conditions": [
+					{
+						"countItem": "ITEM-PAYED-OLD_PRODUCT_SALENUM_TOTAL_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"startDate": 1495468800000,
+						"endDate": 1495519200000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}		
+				
+			老品销售额	
+			{
+				"conditions": [
+					{
+						"countItem": "ITEM-PAYED-OLD_PRODUCT_SALEAMOUNT_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"startDate": 1495468800000,
+						"endDate": 1495519200000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+
+
+	* 类目指标
+		- 在线spu数 指定一级类目id
+		DB_YX-ID_FIRSTCATE_ITEM_ONLINE_COUNT	
+		"parameters":{"firstCategoryId"=21838}
+		
+		{
+				"conditions": [
+					{
+						"countItem": "DB_YX-ID_FIRSTCATE_ITEM_ONLINE_COUNT",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"firstCategoryId": 21838
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+		
+		- 指定一级类目id,查询销量,销售额,支付用户数	
+		销量
+		FIRSTCATE-PAYED-ID_SALENUM_TOTAL_ALL_ACCU
+		"parameters":{"id"=21838}
+		{
+				"conditions": [
+					{
+						"countItem": "FIRSTCATE-PAYED-ID_SALENUM_ALL_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"id": 21838
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+			
+		销售额
+		"parameters":{"id"=21838}
+		{
+				"conditions": [
+					{
+						"countItem": "FIRSTCATE-PAYED-ID_SALEAMOUNT_ALL_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"id": 21838
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}
+
+		- 访问uv&占比
+		ACCESS_YX-ID_FIRST_CATE-UUID_WEB_WAP_ACCU     ACCESS_YX-ID_FIRST_CATE-UUID_IOS_ANDROID_ACCU     "parameters": {"id": xxx}
+				
+			{
+				"conditions": [
+					{
+						"countItem": "ACCESS_YX-ID_FIRST_CATE-UUID_WEB_WAP_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"id": 1010000
+						},
+						"startDate": 1496160000000,
+						"endDate": 1496242800000,
+						"dateSpan": "HOUR"
+					},
+					{
+						"countItem": "ACCESS_YX-ID_FIRST_CATE-UUID_IOS_ANDROID_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"id": 1010
+						},
+						"startDate": 1496160000000,
+						"endDate": 1496242800000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}
+		
+		
+		
+		支付数
+		{
+				"conditions": [
+					{
+						"countItem": "FIRSTCATE-PAYED-ID_UID_ALL_ACCU",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"id": 21838
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+		
+		
+		.... 新品spu、新品销量、新品销售额 ...
+		- 新品spu数
+		DB_YX-ID_FIRSTCATE_ITEM_NEW_PRODUCT_COUNT
+		"parameters":{"firstCategoryId"=1000543}
+		
+		{
+				"conditions": [
+					{
+						"countItem": "DB_YX-ID_FIRSTCATE_ITEM_NEW_PRODUCT_COUNT",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"firstCategoryId": 1000543
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}	
+		
+		- 新品销量
+			#firstCategory 按id查询新品销量|新品销售额 
+			FIRSTCATE-PAYED-ID_NEW_PRODUCT_SALENUM_TOTAL_ALL=
+			#商品销售额 新品 
+			FIRSTCATE-PAYED-ID_NEW_PRODUCT_SALEAMOUNT_ALL
+
+			1000543	- 1076407
+		
+			{
+				"conditions": [
+					{
+						"countItem": "FIRSTCATE-PAYED-ID_NEW_PRODUCT_SALENUM_TOTAL_ALL",
+						"dimens": null,
+						"dimenIds": null,
+						"parameters": {
+							"firstCategoryId": 1000543
+						},
+						"startDate": 1495468800000,
+						"endDate": 1495530000000,
+						"dateSpan": "HOUR"
+					}
+				]
+			}
+			
+		- 新品销售额
+			FIRSTCATE-PAYED-ID_NEW_PRODUCT_SALEAMOUNTT_ALL
+			{
+					"conditions": [
+						{
+							"countItem": "FIRSTCATE-PAYED-ID_NEW_PRODUCT_SALEAMOUNT_ALL",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": {
+								"firstCategoryId": 1000543
+							},
+							"startDate": 1495468800000,
+							"endDate": 1495530000000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}
+		
+	
+
+
+#爆品
+	* 商品销量榜单
+		- 爆品spu数
+		ITEM-PAYED-EXPLOSIVE_GOODS_COUNT_ALL
+		{
+					"conditions": [
+						{
+							"countItem": "ITEM-PAYED-EXPLOSIVE_GOODS_COUNT_ALL",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495468800000,
+							"endDate": 1495472400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}
+				
+		- 总销量
+
+		ITEM-PAYED-EXPLOSIVE_GOODS_SALENUM_ALL
+		{
+					"conditions": [
+						{
+							"countItem": "ITEM-PAYED-EXPLOSIVE_GOODS_SALENUM_ALL",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495468800000,
+							"endDate": 1495472400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}	
+				
+		- 总销售额
+		ITEM-PAYED-EXPLOSIVE_GOODS_SALEAMOUNT_ALL
+		{
+					"conditions": [
+						{
+							"countItem": "ITEM-PAYED-EXPLOSIVE_GOODS_SALEAMOUNT_ALL",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": null,
+							"startDate": 1495468800000,
+							"endDate": 1495472400000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}	
+				
+
+		- 商品排序
+		ITEM-PAYED-EXPLOSIVE_GOODS_SALEAMOUNT_ALL_RANK
+		
+		{
+			"conditions": [
+				{
+					"countItem": "ITEM-PAYED-EXPLOSIVE_GOODS_SALEAMOUNT_ALL_RANK",
+					"dimens": null,
+					"dimenIds": null,
+					"startDate": 1495468800000,
+					"endDate": 1495472400000,
+					"size": 10,
+					"orderBy": "asc",
+					"dateSpan": "HOUR",
+					"parameters": null
+				}
+			]
+		}	
+		
+		- 日流水  按商品id查询销售额
+		ITEM-PAYED-ID_SALEAMOUNT_ALL_ACCU
+		
+			{
+					"conditions": [
+						{
+							"countItem": "ITEM-PAYED-ID_SALEAMOUNT_ALL_ACCU",
+							"dimens": null,
+							"dimenIds": null,
+							"parameters": {"id":300073},
+							"startDate": 1495468800000,
+							"endDate": 1495530000000,
+							"dateSpan": "HOUR"
+						}
+					]
+				}
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+select * from TB_YX_ITEM where onsaletime>#{timeStamp} and status=#{status} and Invalid=#{invalid}		
+
+在线spu		
+select a.*, b.CategoryId secondCategoryId, c.SuperCategoryId firstCategoryId from TB_YX_ITEM a, TB_YX_CATEGORYITEM b, TB_YX_CATEGORY c where a.Invalid=0 and a.status=2 and a.id=b.itemid and b.DefaultCategory=1 and b.categoryid=c.id;			
+
+新品spu
+select a.*, b.CategoryId secondCategoryId, c.SuperCategoryId firstCategoryId from TB_YX_ITEM a, TB_YX_CATEGORYITEM b, TB_YX_CATEGORY c where a.Invalid=0 and a.status=2 and onsaletime>1492790400000 and a.id=b.itemid and b.DefaultCategory=1 and b.categoryid=c.id;
+
+
+........................................................................
+{
+    "countItem": "sales_paysucc_allu_account_allt-HOUR",
+    "dimens": [
+        "STAT_SITE"
+    ],
+    "dimenIds": [
+        2
+    ],
+	parameters:[
+		{"name":"tom","age":17},
+		{"grade":"A"}
+	],
+
+    "startDate": 1495516750555,
+    "endDate": 1495518453996,
+    "dateSpan": "HOUR"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.......................................................................................................
+累计日流水测试（分小时）
+url: 127.0.0.1:8080/yanxuan/xhr/common/query.do
+{
+	"conditions": [
+		{
+			"countItem": "ORDER-PAYED-SALEAMOUNT_ALL_ACCU",
+			"dimens": [
+				"STAT_SITE"
+			],
+			"dimenIds": [
+				2
+			],
+			"startDate": 1494939600000,
+			"endDate": 1494961200000,
+			"dateSpan": "HOUR"
+		}
+	]
+}
+
+
+
+{
+	"conditions": [
+		{
+			"countItem": "ORDER-PAYED-SALEAMOUNT_ALL_SUM",
+			"dimens": [
+				"STAT_SITE"
+			],
+			"dimenIds": [
+				2
+			],
+			"startDate": 1494925200000,
+			"endDate": 1494925200000,
+			"dateSpan": "HOUR"
+		}
+	]
+}
+
+
+
+
+
+
+累计 支付用户-web
+{
+	"conditions": [
+		{
+			"countItem": "ORDER-PAYED-UID_WEB_ACCU",
+			"dimens": [
+				"STAT_SITE"
+			],
+			"dimenIds": [
+				2
+			],
+			"startDate": 1494939600000,
+			"endDate": 1494961200000,
+			"dateSpan": "HOUR"
+		}
+	]
+}
+
+
+
+
+排行 - 销售额
+
+{
+    "conditions": [
+        {
+            "countItem": "ITEM-PAYED-SALEAMOUNT_ALL_RANK",
+            "dimens": [
+                "STAT_SITE"
+            ],
+            "dimenIds": [
+                2
+            ],
+            "startDate": 1494993600000,
+            "endDate": 1495087200000,
+            "size": 5,
+            "orderBy": "desc",
+            "dateSpan": "HOUR"
+        }
+    ]
+}
+
+排行 -  销量
+
+{
+    "conditions": [
+        {
+            "countItem": "ITEM-PAYED-SALENUM_ALL_RANK",
+            "dimens": [
+                "STAT_SITE"
+            ],
+            "dimenIds": [
+                2
+            ],
+            "startDate": 1494993600000,
+            "endDate": 1495087200000,
+            "size": 5,
+            "orderBy": "desc",
+            "dateSpan": "HOUR"
+        }
+    ]
+}
+
+
+
+
+
